@@ -240,6 +240,9 @@
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
   }
+  .mr-0 {
+    margin-right: calc(var(--spacing) * 0);
+  }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
@@ -341,18 +344,18 @@
       margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
+  .space-x-0 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 0) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .space-x-2 {
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .space-x-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-4 {
@@ -554,6 +557,11 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
+  .md\:mr-6 {
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 6);
+    }
+  }
   .md\:mb-0 {
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 0);
@@ -628,6 +636,15 @@
       }
     }
   }
+  .md\:space-x-3 {
+    @media (width >= 48rem) {
+      :where(& > :not(:last-child)) {
+        --tw-space-x-reverse: 0;
+        margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
+        margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
+      }
+    }
+  }
   .md\:space-x-6 {
     @media (width >= 48rem) {
       :where(& > :not(:last-child)) {
@@ -678,7 +695,7 @@ body {
   background-position: 90% -25%;
 }
 .cta {
-  background-image: url(/public/img/bg-simplify-section-desktop.svg);
+  background-image: url(/img/bg-simplify-section-desktop.svg);
   background-repeat: no-repeat;
 }
 @media (max-width: 576px) {
@@ -687,7 +704,7 @@ body {
     background-size: 500px;
   }
   .cta {
-    background-image: url(/public/img/bg-simplify-section-mobile.svg);
+    background-image: url(/img/bg-simplify-section-mobile.svg);
   }
 }
 .hamburger {
@@ -725,6 +742,12 @@ body {
 }
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+@media (max-width:1024px) {
+  input {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 @property --tw-rotate-x {
   syntax: "*";
